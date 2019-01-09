@@ -37,7 +37,7 @@ matrix:
 
 before_install:
   - wget http://api-key-dealer.herokuapp.com/clients/algolia-keys && chmod +x algolia-keys
-  - find /home/travis/.rvm/rubies -wholename '*default/bundler-*.gemspec' -delete
+  - gem uninstall -i /home/travis/.rvm/gems/ruby-$TRAVIS_RUBY_VERSION bundler -x
   - gem install bundler -v 1.17.3
   - bundle --version
 
